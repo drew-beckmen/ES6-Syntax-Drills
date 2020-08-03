@@ -2,12 +2,13 @@
 
 The objective of this lab assignment is to practice ES6 fundamentals that were explored in lecture.
 
-## Concepts Covered: 
+## Concepts Covered in Code: 
 
 1. Template Literals
 2. Default Parameter Values
 3. Arrow Functions and Shorthand
 4. Spread Syntax 
+5. Object Oriented Programming (Prototypes and Class Syntactic Sugar)
 
 ## Other ES6 Concepts: 
 
@@ -16,4 +17,3 @@ The objective of this lab assignment is to practice ES6 fundamentals that were e
 3. Destructuring Assignment
 4. Modules (Import, Export, Export Default)
 5. Array Methods
-6. OOP

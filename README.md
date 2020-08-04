@@ -2,6 +2,8 @@
 
 The objective of this lab assignment is to practice ES6 fundamentals that were explored in lecture.
 
+This lab also contains some code drills to practice asynchronous JavaScript.
+
 ## Concepts Covered in Code: 
 
 1. Template Literals
@@ -9,6 +11,7 @@ The objective of this lab assignment is to practice ES6 fundamentals that were e
 3. Arrow Functions and Shorthand
 4. Spread Syntax 
 5. Object Oriented Programming (Prototypes and Class Syntactic Sugar)
+6. Asynchronous JS (Callbacks, Promises, Promise Chaining, Async/Await)
 
 ## Other ES6 Concepts: 
 

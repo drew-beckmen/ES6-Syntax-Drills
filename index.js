@@ -27,7 +27,7 @@ const displayCharacters = str => {
     }
 }
 let name = "Drew"
-displayCharacters(name)
+// displayCharacters(name)
 
 //-----------------------------------------------------------------------------
 
@@ -46,8 +46,8 @@ Person.prototype.sayHello = function() {
 
 let p1 = new Person("Drew", "Summit", 19)
 let p2 = new Person("Julia", "Jackson Hole", 19)
-p1.sayHello() 
-p2.sayHello()
+// p1.sayHello() 
+// p2.sayHello()
 
 //ES6 Class Syntax 
 class Person2 {
@@ -62,7 +62,7 @@ class Person2 {
     }
 }
 p1 = new Person2("Drew", "Summit", 19)
-p1.sayHi()
+// p1.sayHi()
 
 //Inheritance: 
 class Vehicle {
@@ -113,6 +113,74 @@ class Motorcycle extends Vehicle {
 let t1 = new Truck(4, "Ford", 4, true)
 let s1 = new Sedan(4, "Chevy", "small", 19)
 let m1 = new Motorcycle(2, "Harley Davidson", true)
-t1.aboutVehicle()
-s1.aboutVehicle()
-m1.aboutVehicle()
+// t1.aboutVehicle()
+// s1.aboutVehicle()
+// m1.aboutVehicle()
+
+//---------------------------------------------------------------------------------------
+
+//Asynchronous JavaScript
+
+const printString = str => console.log(str)
+
+// printString("Hello Regular!")
+
+//setTimeout must take an anonymous function as the first argument
+
+setTimeout(() => printString("Hello Async!"), 2000)
+
+const printStringAfterTime = (str, delay) => {
+    setTimeout(() => console.log(str), delay)
+}
+
+function getWords() {
+    printString("Printed Out Immediately")
+    printStringAfterTime("After 3 Seconds", 3000)
+    printStringAfterTime("After 2 Seconds", 2000) 
+    printStringAfterTime("After 1 Second", 1000)
+}
+
+// getWords()
+
+//Callbacks and Recursion----------------------------------
+const done = () => console.log("Job's done!")
+
+async function countdown(num, callback) {
+    if (num === 1) {
+        callback()
+    }
+    else {
+        setTimeout(() => {
+            console.log(num)
+            countdown(num - 1, callback)
+        }, 1000)
+    }
+}
+
+countdown(10, done)
+
+//Writing Custom Promises------------------------------------------
+let lunchTime = true 
+
+function orderMeSomeFood() {
+    return new Promise((resolve, reject) => {
+        if (lunchTime) {
+            let returnObj = {
+                lunch: "your favorite lunch", 
+                drink: "your favorite beverage"
+            }
+            resolve(returnObj)
+        } else {
+            let error = new Error("Something went wrong. ERROR!!!")
+            reject(error)
+        }
+    })
+}
+
+orderMeSomeFood()
+.then(response => {
+    console.log(response)
+    return "Going to next .then()"
+})
+.then(message => console.log(message))
+.catch(error => console.log(error))
